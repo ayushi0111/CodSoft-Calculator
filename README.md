@@ -8,7 +8,6 @@ Welcome to the Basic Calculator repository! This project represents a simple web
 - [Usage](#usage)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
