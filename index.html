@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/calci.css">
+</head>
+
+<body>
+
+    <div class="container calculator">
+        <input type="text" id="display" disabled>
+        <div class="alleg">
+            <button class="btn btn-primary" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-warning" onclick="appendToDisplay('/')">/</button>
+        </div>
+        <div class="alleg">
+            <button class="btn btn-primary" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-warning" onclick="appendToDisplay('*')">*</button>
+        </div>
+        <div class="alleg">
+            <button class="btn btn-primary" onclick="appendToDisplay('1')">1</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-primary" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-warning" onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div class="alleg">
+            <button class="btn btn-primary" onclick="appendToDisplay('0')">0</button>
+            <button class="btn btn-warning" onclick="appendToDisplay('.')">.</button>
+            <button class="btn btn-success" onclick="calculate()">=</button>
+            <button class="btn btn-warning" onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div>
+            <button class="btn btn-danger" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
